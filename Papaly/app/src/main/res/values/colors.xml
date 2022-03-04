@@ -25,4 +25,9 @@
 
 <!--Arvind-->
     <color name="colorPrimary">#348FD1</color>
+<!--Asif-->
+    <color name="waterTankDark">#193F5C</color>
+    <color name="waterTankLight">#307EFF</color>
+    <color name="bgwhite">#E6E9EE</color>
+    <color name="temp_red">#F30000</color>
 </resources>
