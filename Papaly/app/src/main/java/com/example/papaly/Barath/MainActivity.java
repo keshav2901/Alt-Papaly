@@ -1,27 +1,25 @@
 package com.example.papaly.Barath;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.view.ContextMenu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 
+import com.example.papaly.Barath.FirstFragment;
+import com.example.papaly.Barath.SecondFragment;
 import com.example.papaly.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.papaly.Stats.trial_fragment2;
 
-public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
-
-    ImageButton btn_stats, btn_home, btn_profile; 
+public class MainActivity extends AppCompatActivity
+{
+    ImageButton btn_stats, btn_home, btn_profile;
     private ViewPager viewPager;
     Button btn_menu;
     RelativeLayout root;
@@ -42,55 +40,45 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         Toolbar toolbar = findViewById(R.id.tabs);
         setSupportActionBar(toolbar);
 
-        btn_home.setOnClickListener(new View.OnClickListener() {
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(false)
+                    .add(R.id.fragment_container_view,  SecondFragment.class, null)
+                    .addToBackStack("sum")
+                    .commit();
+        }
+
+        btn_stats.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.placeholder, new FirstFragment());
-                ft.commit();
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(false)
+                        .replace(R.id.fragment_container_view,  trial_fragment2.class, null)
+                        .addToBackStack("sum")
+                        .commit();
             }
         });
 
         btn_profile.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.placeholder, new SecondFragment());
-                ft.commit();
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(false)
+                        .replace(R.id.fragment_container_view, FirstFragment.class, null)
+                        .addToBackStack("sum")
+                        .commit();
             }
         });
 
-        btn_menu.setOnClickListener(new View.OnClickListener() {
+        btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-//                getLayoutInflater().inflate(R.layout.fragment_menu, root);
-//                btn_menu.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.menu_button_down));
-//                btn_menu.getLayoutParams().height = 200;
-//                btn_menu.getLayoutParams().width = 200;
-                //registerForContextMenu(view);
-                PopupMenu popup = new PopupMenu(MainActivity.this, view);
-                popup.setOnMenuItemClickListener(MainActivity.this);
-                popup.inflate(R.menu.example_menu);
-                popup.show();
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction()
+                        .setReorderingAllowed(false)
+                        .replace(R.id.fragment_container_view, SecondFragment.class, null)
+                        .addToBackStack("sum")
+                        .commit();
             }
         });
-
-//        DisplayMetrics displayMetrics = new DisplayMetrics();
-//        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-//        int height = displayMetrics.heightPixels;
-//        int width = displayMetrics.widthPixels;
-
     }
-
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        return false;
-    }
-
-    /*@Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-
-        getMenuInflater().inflate(R.menu.example_menu, menu);
-    }*/
 }

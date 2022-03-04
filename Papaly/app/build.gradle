@@ -45,11 +45,7 @@ dependencies {
     //CircleImageViewer
     implementation 'com.mikhaellopez:circularimageview:4.3.0'
 
-    //Neu 1
-//    implementation 'com.github.fornewid:neumorphism:0.3.0'
-    //Neu 2
-//    implementation 'com.github.Borutsky:neumorphism-android:1.0.0-alpha01'
-    //
-
     implementation files('libs/MPAndroidChart-v3.0.1.jar')
+
+    implementation 'com.kofigyan.stateprogressbar:stateprogressbar:1.0.0'
 }

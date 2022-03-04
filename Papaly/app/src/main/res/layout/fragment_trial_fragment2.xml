@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingBottom="20dp"
     android:background="@color/papaly_white"
-    tools:context=".trial_fragment2">
+    tools:context=".Stats.trial_fragment2">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
