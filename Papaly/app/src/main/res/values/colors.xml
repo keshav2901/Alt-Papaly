@@ -11,4 +11,5 @@
     <color name="transparent">#00FFFFFF</color>
     <color name="papaly_white">#E6E9EE</color>
     <color name="papaly_greytext">#5A5959</color>
+    <color name="colorPrimary">#348FD1</color>
 </resources>

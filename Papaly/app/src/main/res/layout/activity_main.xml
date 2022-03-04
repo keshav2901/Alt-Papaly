@@ -9,14 +9,8 @@
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:id="@+id/fragment_container_view"/>
-    <Button
-        android:id="@+id/change"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:fadingEdge="vertical" />
+        android:background="@android:color/transparent"
+        android:id="@+id/Authentication"/>
 
 
 </RelativeLayout>

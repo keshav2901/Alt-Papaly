@@ -92,4 +92,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Mon_28">Mon. \n 20. </string>
+    <string-array name="Tank_array">
+        <item>Underground_Tank</item>
+        <item>0L-750L</item>
+        <item>750L-1500L</item>
+        <item>1500L-2250L</item>
+    </string-array>
 </resources>

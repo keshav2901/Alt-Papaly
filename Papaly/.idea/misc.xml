@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/activity_splash.xml" value="0.12708333333333333" />
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/dropdown_view.xml" value="0.12708333333333333" />
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/fragment_bar__chart.xml" value="0.12708333333333333" />
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/fragment_code.xml" value="0.12708333333333333" />
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/fragment_i_d.xml" value="0.12708333333333333" />
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/fragment_name.xml" value="0.12708333333333333" />
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/fragment_number.xml" value="0.12708333333333333" />
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/fragment_tank.xml" value="0.12708333333333333" />
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/fragment_trial__fragmet.xml" value="0.12708333333333333" />
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/fragment_trial_fragment2.xml" value="0.12708333333333333" />
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/fragment_water_pi.xml" value="0.12708333333333333" />
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/fragment_weekly_water_pi.xml" value="0.12708333333333333" />
+        <entry key="..\:/AppDevelopment/Alt-Papaly/Papaly/app/src/main/res/layout/items_list.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/kesha/AndroidStudioProjects/Alt-Papaly/Papaly/app/src/main/res/layout/activity_main.xml" value="0.10144927536231885" />
       </map>
     </option>
