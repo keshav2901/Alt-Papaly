@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/name"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Authentication.Name">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E6E9EE">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E6E9EE"
+            android:orientation="vertical"
+            android:padding="40dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/horizontal_logo" />
+
+            <com.kofigyan.stateprogressbar.StateProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@android:color/transparent"
+                app:spb_checkStateCompleted="true"
+                app:spb_currentStateDescriptionColor="#0F9D58"
+                app:spb_currentStateNumber="three"
+                app:spb_maxStateNumber="four"
+                app:spb_stateBackgroundColor="#999999"
+                app:spb_stateDescriptionColor="#808080"
+                app:spb_stateForegroundColor="#348FD1"
+                app:spb_stateNumberBackgroundColor="#808080"
+                app:spb_stateNumberForegroundColor="#eeeeee" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="80dp"
+                android:background="@android:color/transparent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/inputbackground"
+                    android:hint="Name"
+                    android:paddingStart="20dp"
+                    android:textColorHint="#999999"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:background="@android:color/transparent"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageButton
+                    android:id="@+id/namePrevious"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/roundbutton2"
+                    android:src="@drawable/ic_baseline_arrow_back_24" />
+
+                <ImageButton
+                    android:id="@+id/nameNext"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/roundbutton1"
+                    android:src="@drawable/ic_baseline_arrow_forward_24" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

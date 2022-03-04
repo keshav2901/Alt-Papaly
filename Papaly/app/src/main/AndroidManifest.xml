@@ -5,12 +5,19 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Papaly"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Papaly">
+        <activity android:name=".Barath.MainActivity"
+            android:exported="true">
+        </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Authentication.AuthActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".Authentication.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

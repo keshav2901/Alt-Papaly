@@ -1,7 +1,6 @@
-package com.example.papaly;
+package com.example.papaly.Stats;
 
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
@@ -11,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.papaly.R;
 import com.github.mikephil.charting.charts.LineChart;
 
 import com.github.mikephil.charting.components.XAxis;
