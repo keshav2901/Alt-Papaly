@@ -48,4 +48,8 @@ dependencies {
     implementation files('libs/MPAndroidChart-v3.0.1.jar')
 
     implementation 'com.kofigyan.stateprogressbar:stateprogressbar:1.0.0'
+
+    //Asif
+    implementation 'com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1'
+
 }
