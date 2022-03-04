@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/extra"
+        android:layout_width="78dp"
+        android:layout_height="140dp"
+        android:src="@drawable/extention_t_joint"
+        android:layout_gravity="center_vertical"
+        />
+
+    <ImageView
+        android:id="@+id/img_pipe"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/pipe"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="15dp"
+        />
+    <ImageView
+        android:id="@+id/extra2"
+        android:layout_width="75dp"
+        android:layout_height="25dp"
+        android:src="@drawable/extra_extention_new"
+        android:layout_gravity="center_vertical"
+        />
+
+    <ImageView
+        android:id="@+id/img_tank"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_toEndOf="@+id/img_pipe"
+        android:background="@color/primary"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="-50dp"/>
+
+
+</LinearLayout>
