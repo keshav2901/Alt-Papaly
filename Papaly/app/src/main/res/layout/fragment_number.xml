@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/number"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_centerInParent="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E6E9EE">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="40dp"
+            android:background="#E6E9EE">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/horizontal_logo"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#E6E9EE"
+                android:orientation="vertical"
+                android:layout_marginTop="109dp"
+                >
+
+
+                <EditText
+                    android:id="@+id/Number"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="Phone Number"
+                    android:background="@drawable/inputbackground"
+                    android:padding="20dp"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:textColor="#999999"
+                    android:textColorHint="#999999"
+                    />
+
+                <EditText
+                    android:id="@+id/InviteCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="Invite Code (if any)"
+                    android:layout_below="@+id/phonenumber"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/inputbackground"
+                    android:padding="20dp"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:textColorHint="#999999"
+                    />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:background="@android:color/transparent"
+                android:padding="10dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+
+                <ImageButton
+                    android:id="@+id/next"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/roundbutton1"
+                    android:src="@drawable/ic_baseline_arrow_forward_24" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
