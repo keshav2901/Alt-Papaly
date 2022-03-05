@@ -3,6 +3,10 @@ package com.example.papaly.Barath;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,23 +18,18 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.ToggleButton;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import com.example.papaly.R;
 
 import java.util.Calendar;
 
-public class AsifActivity extends Fragment {
+public class MainFragment extends Fragment {
+
     int waterLevelTriggerPercentage1 = 75;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View v = inflater.inflate(R.layout.fragment_main, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view =  inflater.inflate(R.layout.fragment_main, container, false);
 
 
         //get temperature from firebase
@@ -41,25 +40,25 @@ public class AsifActivity extends Fragment {
 
 
         //setting value holders for variables
-        TextView waterLiter = (TextView) v.findViewById(R.id.tank_liters);
-        TextView temperature = (TextView) v.findViewById(R.id.temp_degree);
-        TextView tankPercentage = (TextView) v.findViewById(R.id.tank_percentage);
+        TextView waterLiter = (TextView) view.findViewById(R.id.tank_liters);
+        TextView temperature = (TextView) view.findViewById(R.id.temp_degree);
+        TextView tankPercentage = (TextView) view.findViewById(R.id.tank_percentage);
 
-        TextView waterLevelTriggerPercentage = (TextView) v.findViewById(R.id.waterLevelTriggerPercentage);
+        TextView waterLevelTriggerPercentage = (TextView) view.findViewById(R.id.waterLevelTriggerPercentage);
 
         waterLevelTriggerPercentage.setText(""+ waterLevelTriggerPercentage1);
         //waterLevelTriggerPercentage.setEnabled(true);
         //waterLevelTriggerPercentage.type;
 
-        TextView timeTriggerTime = v.findViewById(R.id.timetriggertime);
-        TextView timeTriggerWaterLevel = (TextView) v.findViewById(R.id.timetriggerwaterlevel);
+        TextView timeTriggerTime = view.findViewById(R.id.timetriggertime);
+        TextView timeTriggerWaterLevel = (TextView) view.findViewById(R.id.timetriggerwaterlevel);
 
-        ToggleButton ManualSwitch = (ToggleButton) v.findViewById(R.id.manualswitchbutton1);
+        ToggleButton ManualSwitch = (ToggleButton) view.findViewById(R.id.manualswitchbutton1);
 
-        LinearLayout WaterLevelTrigger = (LinearLayout) v.findViewById(R.id.waterLevelTrigger);
-        LinearLayout TimeTrigger = (LinearLayout) v.findViewById(R.id.timeTrigger);
+        LinearLayout WaterLevelTrigger = (LinearLayout) view.findViewById(R.id.waterLevelTrigger);
+        LinearLayout TimeTrigger = (LinearLayout) view.findViewById(R.id.timeTrigger);
 
-        ImageView thermometer = (ImageView) v.findViewById(R.id.thermoboys);
+        ImageView thermometer = (ImageView) view.findViewById(R.id.thermoboys);
 
         //get time from firebase
         int mHour, mMinute;
@@ -92,12 +91,12 @@ public class AsifActivity extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     ManualSwitch.setAlpha(0);
-                    ((TextView) v.findViewById(R.id.manualswitchstate)).setText("ON");
-                    v.setKeepScreenOn(true);
+                    ((TextView) view.findViewById(R.id.manualswitchstate)).setText("ON");
+                    view.setKeepScreenOn(true);
                 } else {
                     ManualSwitch.setAlpha(1);
-                    ((TextView) v.findViewById(R.id.manualswitchstate)).setText("OFF");
-                    v.setKeepScreenOn(false);
+                    ((TextView) view.findViewById(R.id.manualswitchstate)).setText("OFF");
+                    view.setKeepScreenOn(false);
 
                 }
             }
@@ -107,7 +106,7 @@ public class AsifActivity extends Fragment {
         //***********
         //Waterlevel or timetrigger setting buttons
         //***********
-        v.findViewById(R.id.waterLevelTrigger).setOnClickListener(new View.OnClickListener(){
+        view.findViewById(R.id.waterLevelTrigger).setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
@@ -115,7 +114,7 @@ public class AsifActivity extends Fragment {
                 TimeTrigger.setBackgroundResource(R.drawable.unselectedbutton);
             }
         });
-        v.findViewById(R.id.timeTrigger).setOnClickListener(new View.OnClickListener(){
+        view.findViewById(R.id.timeTrigger).setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
@@ -168,14 +167,14 @@ public class AsifActivity extends Fragment {
                 }, mHour, mMinute, false);
 
         //onclick listener for timetrigger time setting button
-        v.findViewById(R.id.timetriggertime).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.timetriggertime).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 timePickerDialog.show();
             }
         });
 
-        v.findViewById(R.id.waterLevelTriggerPercentage).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.waterLevelTriggerPercentage).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
@@ -215,13 +214,9 @@ public class AsifActivity extends Fragment {
                 alert.show();
             }
         });
-
-        return v;
-
+        
+        return view;
     }
-
-    //---------------------
-
 
 
     public void onBackPressed()
@@ -291,7 +286,4 @@ public class AsifActivity extends Fragment {
         // Show the Alert Dialog box
         alertDialog.show();
     }
-
-    //---------------------
-
 }

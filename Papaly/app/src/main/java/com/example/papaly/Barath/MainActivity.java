@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -73,9 +74,10 @@ public class MainActivity extends AppCompatActivity
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 getSupportFragmentManager().beginTransaction()
                         .setReorderingAllowed(false)
-                        .replace(R.id.fragment_container_view, SecondFragment.class, null)
+                        .replace(R.id.fragment_container_view, MainFragment.class, null)
                         .addToBackStack("sum")
                         .commit();
             }
