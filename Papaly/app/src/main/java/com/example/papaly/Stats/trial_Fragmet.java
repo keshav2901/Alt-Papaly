@@ -90,7 +90,7 @@ public class trial_Fragmet extends Fragment implements OnChartValueSelectedListe
 
         lineChart.setTouchEnabled(false);
 
-        lineChart.setBackgroundColor(getResources().getColor(R.color.papaly_white));
+        lineChart.setBackgroundColor(getResources().getColor(R.color.transparent));
         lineChart.setData(data);
 
         lineChart.getAxisLeft().setEnabled(true);

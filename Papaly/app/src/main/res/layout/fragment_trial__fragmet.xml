@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Stats.trial_Fragmet"
-    android:background="@drawable/bg">
+    tools:context=".Stats.trial_Fragmet">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -12,8 +11,8 @@
         android:id = "@+id/lineChart"
         android:layout_width = "match_parent"
         android:layout_height = "match_parent"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="10dp"
-        android:background="@color/papaly_white"/>
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="15dp"
+        android:background="@color/transparent" />
 
 </RelativeLayout>
