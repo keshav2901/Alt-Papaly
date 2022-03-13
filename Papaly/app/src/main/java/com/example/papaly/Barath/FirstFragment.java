@@ -1,5 +1,7 @@
 package com.example.papaly.Barath;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.animation.AlphaAnimation;
@@ -24,6 +27,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.papaly.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -43,7 +47,8 @@ public class FirstFragment extends Fragment {
 
     ImageView contactPic;
 
-    FloatingActionButton btn_coin_add;
+    FloatingActionButton btn_coin_add, btn_add_marbles, btn_options;
+    boolean isVisible = false;
 
     ExtraConstructor extraConstructor = new ExtraConstructor();
 
@@ -65,17 +70,38 @@ public class FirstFragment extends Fragment {
         coin_count_2 = v.findViewById(R.id.coin_count_2);
 
         btn_coin_add = v.findViewById(R.id.btn_coin_add);
+        btn_add_marbles = v.findViewById(R.id.btn_add_marbles);
+        btn_options = v.findViewById(R.id.btn_options);
+
+        btn_options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!isVisible)
+                {
+                    reveal();
+                }
+                else
+                {
+                    hide();
+                }
+            }
+        });
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         float width = displayMetrics.widthPixels;
 
-        int numberOfTanks = 4;
+        int numberOfTanks = 1;
 
         Log.d("TAG", "Pixel " + convertDpToPx(getContext(), 140f));
 
-        relative_main.getLayoutParams().height = (int) ((height - 200) + ((height - 200) * (numberOfTanks/5f)));
+        relative_main.getLayoutParams().height = (int) ((height) + (numberOfTanks * 330));
+
+        if(numberOfTanks == 1)
+        {
+            relative_main.getLayoutParams().height = (int) ((height) + (numberOfTanks * 500));
+        }
 
         mPhotoIV.measure(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         int photoHeight = mPhotoIV.getMeasuredHeight();
@@ -94,10 +120,19 @@ public class FirstFragment extends Fragment {
             extraConstructor.setView(arrayView);
             relative_main.addView(extraView);
             extraView.setVisibility(View.INVISIBLE);
-            extraView.setTranslationY(mPhotoIV.getMeasuredHeight() + (320 * (i + 1)));
+            extraView.setTranslationY(mPhotoIV.getMeasuredHeight() + (320 * (i + 0.75f)));
 //            extraView.setTranslationY(mPhotoIV.getMeasuredHeight() + (320));
             extraView.setTranslationX(width/5 + 7.5f);
+            extraView.setTranslationZ(-10);
 
+            RelativeLayout.LayoutParams params= new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+            params.addRule(RelativeLayout.BELOW, R.id.relative_main);
+            params.setMargins(180, -900,0,0);
+            if(numberOfTanks == 1)
+            {
+                params.setMargins((int) (width-910), (int) (height-(height*1.438f)),0,0);
+            }
+            btn_coin_add .setLayoutParams(params);
         }
 
 //        RelativeLayout.MarginLayoutParams params = (RelativeLayout.MarginLayoutParams) btn_coin_add.getLayoutParams();
@@ -198,7 +233,7 @@ public class FirstFragment extends Fragment {
                 fade_in.setFillAfter(true);
                 v.startAnimation(fade_in);*/
 
-                ScaleAnimation fade_in = new ScaleAnimation(1f, y - 0.3f, 1f, y - 0.3f, Animation.RELATIVE_TO_SELF, -0.4f, Animation.RELATIVE_TO_SELF, 0.5f);
+                ScaleAnimation fade_in = new ScaleAnimation(1f, y - 0.3f, 1f, y - 0.3f, Animation.RELATIVE_TO_SELF, -(width * 0.00037f), Animation.RELATIVE_TO_SELF, height * 0.00022f);
                 fade_in.setDuration(1500);
                 fade_in.setFillAfter(true);
 
@@ -214,23 +249,35 @@ public class FirstFragment extends Fragment {
                 move_right.setDuration(1500);
                 move_right.setFillAfter(true);
 
-                if(scrollY > 700 && scaled)
+                Animation btn_animation_in = new AlphaAnimation(0.0f, 1.0f);
+                btn_animation_in.setDuration(2000);
+                btn_animation_in.setFillAfter(true);
+
+                Animation btn_animation_out = new AlphaAnimation(1.0f, 0.0f);
+                btn_animation_out.setDuration(1500);
+                btn_animation_out.setFillAfter(true);
+
+                if(scrollY > 350 && scaled)
                 {
-                    mScrollView.smoothScrollTo(700, 900);
+                    mScrollView.smoothScrollTo(350, 900);
                     scaled = false;
                     relative_container.startAnimation(fade_in);
+//                    btn_coin_add.startAnimation(fade_in);
                     relative_count.startAnimation(move_left);
                     for(View v : extraConstructor.getView())
                     {
                         v.setVisibility(View.VISIBLE);
                         v.startAnimation(animationOpen);
                     }
+                    btn_coin_add.startAnimation(btn_animation_in);
+                    btn_coin_add.setVisibility(View.VISIBLE);
                 }
-                if(scrollY < 550 && !scaled)
+                if(scrollY < 300 && !scaled)
                 {
                     //mScrollView.smoothScrollTo(550, 0);
                     scaled = true;
                     relative_container.startAnimation(fade_out);
+//                    btn_coin_add.startAnimation(fade_out);
                     relative_count.startAnimation(move_right);
                     for(View v : extraConstructor.getView())
                     {
@@ -239,7 +286,9 @@ public class FirstFragment extends Fragment {
                     }
 //                    extraConstructor.getView().startAnimation(animationClose);
 //                    extraConstructor.getView().setVisibility(View.INVISIBLE);
-
+//                    btn_coin_add.startAnimation(animationClose);
+                    btn_coin_add.startAnimation(btn_animation_out);
+                    btn_coin_add.setVisibility(View.GONE);
                 }
 
             }
@@ -283,6 +332,58 @@ public class FirstFragment extends Fragment {
 
     public float convertDpToPx(Context context, float dp) {
         return dp * context.getResources().getDisplayMetrics().density;
+    }
+
+    private void reveal()
+    {
+        int addX = btn_add_marbles.getWidth() / 2;
+        int addY = btn_add_marbles.getHeight() / 2;
+
+        float finalRadiusLogout = (float) Math.hypot(addX,addY);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
+        {
+            Animator animLogout = ViewAnimationUtils.createCircularReveal(btn_add_marbles,addX,addY,0,finalRadiusLogout);
+
+            btn_add_marbles.setVisibility(View.VISIBLE);
+
+            animLogout.start();
+        }
+        else
+        {
+            btn_add_marbles.setVisibility(View.VISIBLE);
+        }
+        isVisible = true;
+    }
+
+    private void hide()
+    {
+        int addX = btn_add_marbles.getWidth() / 2;
+        int addY = btn_add_marbles.getHeight() / 2;
+
+        float initialRadiusLogout = (float) Math.hypot(addX,addY);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
+        {
+            Animator animLogout = ViewAnimationUtils.createCircularReveal(btn_add_marbles,addX,addY,initialRadiusLogout,0);
+
+            animLogout.addListener(new AnimatorListenerAdapter()
+            {
+                @Override
+                public void onAnimationEnd(Animator animation)
+                {
+                    super.onAnimationEnd(animation);
+                    btn_add_marbles.setVisibility(View.GONE);
+                }
+            });
+
+            animLogout.start();
+        }
+        else
+        {
+            btn_add_marbles.setVisibility(View.GONE);
+        }
+        isVisible = false;
     }
 
     /*public void addView()
