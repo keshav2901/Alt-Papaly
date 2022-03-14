@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "613037722107",
+    "project_id": "papaly-1cc24",
+    "storage_bucket": "papaly-1cc24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613037722107:android:6da00fd32993792ec8e35e",
+        "android_client_info": {
+          "package_name": "com.example.papaly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613037722107-kvoktc03itkqkn21bloscrf3d9oh2jbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQz2nvRKazbYNuUIA_AL0g_evHR81dKuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613037722107-kvoktc03itkqkn21bloscrf3d9oh2jbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

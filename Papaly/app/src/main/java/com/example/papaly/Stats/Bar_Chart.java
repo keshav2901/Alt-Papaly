@@ -108,6 +108,7 @@ public class Bar_Chart extends Fragment {
         chart.setDragEnabled(false);
         chart.setHighlightFullBarEnabled(false);
         chart.invalidate();
+
         return view;
     }
 }

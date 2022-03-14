@@ -12,51 +12,12 @@ import android.widget.Button;
 
 import com.example.papaly.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link trial_fragment2#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class trial_fragment2 extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    Button button1, button2, button3, button4, button5, button6, button7;
 
     public trial_fragment2() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment trial_fragment2.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static trial_fragment2 newInstance(String param1, String param2) {
-        trial_fragment2 fragment = new trial_fragment2();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -64,6 +25,99 @@ public class trial_fragment2 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_trial_fragment2, container, false);
+
+        button1 = view.findViewById(R.id.day_button_1);
+        button2 = view.findViewById(R.id.day_button_2);
+        button3 = view.findViewById(R.id.day_button_3);
+        button4 = view.findViewById(R.id.day_button_4);
+        button5 = view.findViewById(R.id.day_button_5);
+        button6 = view.findViewById(R.id.day_button_6);
+        button7 = view.findViewById(R.id.day_button_7);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button1.setBackground(getResources().getDrawable(R.drawable.date_background_selected));
+                button2.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button3.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button4.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button5.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button6.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button7.setBackground(getResources().getDrawable(R.drawable.date_background));
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button1.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button2.setBackground(getResources().getDrawable(R.drawable.date_background_selected));
+                button3.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button4.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button5.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button6.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button7.setBackground(getResources().getDrawable(R.drawable.date_background));            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button1.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button2.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button3.setBackground(getResources().getDrawable(R.drawable.date_background_selected));
+                button4.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button5.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button6.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button7.setBackground(getResources().getDrawable(R.drawable.date_background));            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button1.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button2.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button3.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button4.setBackground(getResources().getDrawable(R.drawable.date_background_selected));
+                button5.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button6.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button7.setBackground(getResources().getDrawable(R.drawable.date_background));            }
+        });
+
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button1.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button2.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button3.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button4.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button5.setBackground(getResources().getDrawable(R.drawable.date_background_selected));
+                button6.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button7.setBackground(getResources().getDrawable(R.drawable.date_background));            }
+        });
+
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button1.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button2.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button3.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button4.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button5.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button6.setBackground(getResources().getDrawable(R.drawable.date_background_selected));
+                button7.setBackground(getResources().getDrawable(R.drawable.date_background));            }
+        });
+
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button1.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button2.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button3.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button4.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button5.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button6.setBackground(getResources().getDrawable(R.drawable.date_background));
+                button7.setBackground(getResources().getDrawable(R.drawable.date_background_selected));            }
+        });
 
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
 
@@ -89,10 +143,6 @@ public class trial_fragment2 extends Fragment {
                     .addToBackStack("water")
                     .commit();
         }
-
-        Button b1 = view.findViewById(R.id.day_button_1);
-        b1.setBackground(getResources().getDrawable(R.drawable.bg));
-
 
         return view;
     }

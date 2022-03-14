@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tank"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Authentication.Tank">
+    tools:context=".Authentication.Tank"
+    android:background="#E6E9EE">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#E6E9EE">
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,7 +58,8 @@
                     android:textStyle="bold"
                     android:textColor="#348FD1"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="20dp"/>
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/lexendvariablefontwght"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -74,7 +76,8 @@
                         android:text="PAPALY type: "
                         android:textStyle="bold"
                         android:textSize="17dp"
-                        android:textColor="#999999"/>
+                        android:textColor="@color/papaly_greytext"
+                        android:fontFamily="@font/lexendvariablefontwght"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -82,7 +85,8 @@
                         android:text="Water-Level Watchman"
                         android:background="@android:color/transparent" android:textSize="17dp"
                         android:textStyle="bold"
-                        android:textColor="#348FD1"/>
+                        android:textColor="#348FD1"
+                        android:fontFamily="@font/lexendvariablefontwght"/>
 
                 </LinearLayout>
 
@@ -95,27 +99,21 @@
                     android:textColor="#999999"
                     android:textStyle="bold"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="20dp" />
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/lexendvariablefontwght"/>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/dropdown_menu"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                <EditText
+                    android:id="@+id/dropdown_text"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    app:endIconMode="dropdown_menu"
-                    app:hintEnabled="false">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/dropdown_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:hint="Tank Capacity"
-                        android:textColor="#999999"
-                        android:textStyle="bold"
-                        android:background="@drawable/inputbackground" />
-
-                </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="60dp"
+                    android:hint="Tank Capacity"
+                    android:textColor="@color/papaly_greytext"
+                    android:textStyle="bold"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:textColorHint="#999999"
+                    android:background="@drawable/inputbackground"
+                    android:fontFamily="@font/lexendvariablefontwght"/>
 
             </LinearLayout>
 
@@ -133,13 +131,13 @@
                     android:id="@+id/enter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PAPALY..."
+                    android:text="PAPALY"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:textSize="19dp"
+                    android:textSize="22dp"
                     android:gravity="center"
                     android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true" />
+                    android:layout_centerVertical="true"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -155,4 +153,4 @@
 
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>

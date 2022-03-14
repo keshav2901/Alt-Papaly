@@ -4,21 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECEFF4"
+    android:background="@color/background"
     tools:context=".Barath.MainActivity"
     android:id="@+id/root">
 
     <FrameLayout
         android:id="@+id/placeholder"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="80dp"/>
+        android:layout_height="match_parent" />
 
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/fragment_container_view"
-        android:layout_marginTop="80dp"/>
+        android:id="@+id/fragment_container_view"/>
 
     <Button
         android:id="@+id/btn_menu"

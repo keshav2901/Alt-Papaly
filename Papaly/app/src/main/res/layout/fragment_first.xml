@@ -5,7 +5,12 @@
     android:id="@+id/relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECEFF4">
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -15,176 +20,154 @@
         android:scrollbarSize="0dp">
 
         <RelativeLayout
-            android:id="@+id/relative_main"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <com.mikhaellopez.circularimageview.CircularImageView
-                android:id="@+id/user_profile"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@mipmap/ic_launcher"
-                app:civ_border_width="0dp"
-                app:civ_border_color="#3f51b5"
-                android:layout_margin="20dp"/>
-
-            <TextView
-                android:id="@+id/user_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/user_profile"
-                android:layout_marginTop="35dp"
-                android:layout_marginStart="15dp"
-                android:text="User Name"
-                android:textSize="28sp"
-                android:textColor="@color/primary"/>
-
-            <TextView
-                android:id="@+id/user_phone_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/user_profile"
-                android:layout_below="@+id/user_name"
-                android:layout_marginTop="9dp"
-                android:layout_marginStart="27dp"
-                android:text="Phone Number"
-                android:textSize="15sp"
-                android:textColor="@color/toast"/>
-
-            <ProgressBar
-                android:id="@+id/underline_one"
+            <RelativeLayout
+                android:id="@+id/relative_main"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_below="@+id/user_phone_no"
-                android:layout_toEndOf="@+id/user_profile"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="30dp"
-                android:progress="100"
-                android:progressTint="@color/toast"/>
-
-            <LinearLayout
-                android:id="@+id/linear_layout"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/user_profile"
-                android:layout_toEndOf="@+id/user_profile"
-                android:layout_marginStart="-65dp"
-                android:gravity="center"
-                android:clickable="true"
-                android:layout_marginTop="-10dp">
+                android:layout_marginTop="90dp">
 
-                <ImageView
-                    android:id="@+id/camera_icon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_outline_add_a_photo_24"/>
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/user_profile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_round_person_24"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="@color/primary"
+                    android:layout_margin="20dp"/>
 
                 <TextView
+                    android:id="@+id/user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:textColor="@color/primary"
-                    android:text="Set Profile Photo"/>
-
-            </LinearLayout>
-
-            <ProgressBar
-                android:id="@+id/underline_two"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_below="@+id/linear_layout"
-                android:layout_marginTop="10dp"
-                android:layout_marginHorizontal="30dp"
-                android:progress="100"
-                android:progressTint="@color/toast"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/underline_two"
-                android:layout_margin="20dp"
-                android:textSize="30sp"
-                android:text="You have"
-                android:textColor="@color/toast"/>
-
-            <ImageView
-                android:id="@+id/img_coin"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/coin_icon"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/underline_two"
-                android:layout_marginTop="5dp"/>
-
-            <TextView
-                android:id="@+id/coin_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_coin"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="-10dp"
-                android:textSize="30sp"
-                android:text="5"
-                android:textColor="@color/primary"/>
-
-            <RelativeLayout
-                android:id="@+id/relative_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/coin_count"
-                android:layout_marginTop="-5dp">
-
-                <ImageView
-                    android:id="@+id/coin_container"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:elevation="6dp"
-                    android:src="@drawable/container_new"
-                    android:visibility="visible" />
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/btn_coin_add"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/coin_container"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="-40dp"
-                    android:src="@drawable/ic_round_add_24"
-                    android:visibility="invisible" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relative_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/coin_count"
-                android:layout_marginTop="50dp"
-                android:translationX="500dp">
-
-                <TextView
-                    android:id="@+id/coin_count_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5 x"
-                    android:textSize="70sp"
+                    android:layout_toEndOf="@+id/user_profile"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginStart="15dp"
+                    android:text="Barath"
+                    android:textSize="28sp"
                     android:textColor="@color/primary"/>
 
-                <Button
+                <TextView
+                    android:id="@+id/user_phone_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/coin_count_2"/>
+                    android:layout_toEndOf="@+id/user_profile"
+                    android:layout_below="@+id/user_name"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"
+                    android:text="9543256564"
+                    android:textSize="15sp"
+                    android:textColor="@color/toast"/>
+
+                <ProgressBar
+                    android:id="@+id/underline_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_below="@+id/user_profile"
+                    android:layout_marginHorizontal="30dp"
+                    android:progress="100"
+                    android:progressTint="@color/toast"/>
+
+                <ImageView
+                    android:id="@+id/img_coin"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/coin_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/underline_two"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:id="@+id/coin_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_coin"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-10dp"
+                    android:textSize="25sp"
+                    android:text="5"
+                    android:textColor="@color/primary"/>
+
+                <RelativeLayout
+                    android:id="@+id/relative_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/coin_count"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/coin_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:elevation="6dp"
+                        android:src="@drawable/container_new"
+                        android:visibility="visible" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relative_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/coin_count"
+                    android:layout_marginTop="50dp"
+                    android:translationX="500dp">
+
+                    <TextView
+                        android:id="@+id/coin_count_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5 x"
+                        android:textSize="70sp"
+                        android:textColor="@color/primary"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/coin_count_2"/>
+
+                </RelativeLayout>
 
             </RelativeLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_coin_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relative_main"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="-200dp"
+                android:translationZ="20dp"
+                android:src="@drawable/ic_round_add_24"
+                android:outlineAmbientShadowColor="@color/transparent"
+                android:outlineSpotShadowColor="@color/transparent"
+                android:visibility="gone"/>
 
         </RelativeLayout>
 
     </ScrollView>
 
+    </RelativeLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_add_marbles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_round_add_24"
+        app:fabSize="normal"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/btn_options"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
+        app:backgroundTint="@color/primary"
+        android:visibility="invisible"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_options"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

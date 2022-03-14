@@ -13,8 +13,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
-import com.example.papaly.Barath.FirstFragment;
-import com.example.papaly.Barath.SecondFragment;
 import com.example.papaly.R;
 import com.example.papaly.Stats.trial_fragment2;
 
@@ -44,7 +42,7 @@ public class MainActivity extends AppCompatActivity
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(false)
-                    .add(R.id.fragment_container_view,  SecondFragment.class, null)
+                    .add(R.id.fragment_container_view,  MainFragment.class, null)
                     .addToBackStack("sum")
                     .commit();
         }
@@ -74,7 +72,6 @@ public class MainActivity extends AppCompatActivity
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 getSupportFragmentManager().beginTransaction()
                         .setReorderingAllowed(false)
                         .replace(R.id.fragment_container_view, MainFragment.class, null)
@@ -82,5 +79,13 @@ public class MainActivity extends AppCompatActivity
                         .commit();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }

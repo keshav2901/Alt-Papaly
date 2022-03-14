@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.papaly.R;
-import com.kofigyan.stateprogressbar.StateProgressBar;
+//import com.kofigyan.stateprogressbar.StateProgressBar;
 
 public class Code extends Fragment {
 
